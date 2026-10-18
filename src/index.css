@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #dc2626;
+  --color-brand-red-dark: #b91c1c;
+  --color-brand-navy: #0f172a;
+  --color-brand-navy-dark: #020617;
+  --color-brand-blue: #1e40af;
+  --color-brand-teal: #0d9488;
+  --color-surface: #ffffff;
+  --color-background: #f8fafc;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility: High Contrast Mode */
+html.high-contrast {
+  filter: contrast(160%) saturate(120%);
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.high-contrast body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.high-contrast section,
+html.high-contrast div,
+html.high-contrast nav,
+html.high-contrast footer,
+html.high-contrast article {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+html.high-contrast h1, 
+html.high-contrast h2, 
+html.high-contrast h3, 
+html.high-contrast h4,
+html.high-contrast p, 
+html.high-contrast span,
+html.high-contrast li {
+  color: #ffffff !important;
+}
+
+html.high-contrast button, 
+html.high-contrast a {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+}
+
+html.high-contrast svg {
+  color: #ffffff !important;
+}
+
+html.high-contrast button svg, 
+html.high-contrast a svg {
+  color: #000000 !important;
+}
+
+/* Accessibility: Large Text Mode */
+html.large-text {
+  font-size: 112%;
+}
+
+html.large-text h1 { font-size: 135%; }
+html.large-text h2 { font-size: 125%; }
+html.large-text p, 
+html.large-text span, 
+html.large-text button, 
+html.large-text a, 
+html.large-text input, 
+html.large-text textarea,
+html.large-text select { 
+  font-size: 112%; 
+}
+
+/* Accessibility: Visible Focus for Keyboard Navigation (WCAG 2.4.7) */
+:focus-visible {
+  outline: 3px solid #dc2626 !important;
+  outline-offset: 3px !important;
+}
+
+/* Skip link for keyboard users (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  right: 16px;
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 10px 18px;
+  z-index: 100;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: underline;
+  transition: top 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Highlight Links Mode */
+html.highlight-links a {
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+}
+
+/* Readable Font Mode */
+html.readable-font body,
+html.readable-font * {
+  font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Stop Animations Mode */
+html.stop-animations *,
+html.stop-animations *::before,
+html.stop-animations *::after {
+  animation: none !important;
+  transition: none !important;
+}
