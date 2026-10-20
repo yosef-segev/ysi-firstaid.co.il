@@ -8,7 +8,7 @@ const PriceCalculator = () => {
   const [location, setLocation] = useState('home');
 
   const courseOptions = [
-    { id: 'medics', name: 'ריענון חובשים / מע״רים' },
+    { id: 'medics', name: 'ריענון חובשים / מע"רים' },
     { id: 'lifeguards', name: 'עזרה ראשונה למצילים' },
     { id: 'fitness', name: 'עזרה ראשונה למאמני כושר (חוק הספורט)' },
     { id: 'security', name: 'עזרה ראשונה למאבטחים' },
@@ -62,6 +62,9 @@ const PriceCalculator = () => {
   const selectedCourseObj = courseOptions.find(c => c.id === courseType) || courseOptions[0];
   const selectedGroupObj = groupOptions.find(g => g.id === groupSize) || groupOptions[1];
   const selectedLocationObj = locationOptions.find(l => l.id === location) || locationOptions[0];
+  const estimatedPriceText = selectedGroupObj.isSpecial
+    ? 'מחיר מותאם'
+    : selectedGroupObj.priceDisplay.replace(/^כ-/, '');
 
   const buildWhatsAppMessage = () => {
     const text = `שלום ysi הדרכות, השתמשתי במחשבון המחיר באתר:
@@ -222,6 +225,15 @@ const PriceCalculator = () => {
                   <span className="text-[12px] text-slate-500 font-medium block mt-1">
                     {selectedGroupObj.priceSubtext}
                   </span>
+                </div>
+
+                <div className="mb-4 rounded-2xl border border-amber-200 bg-amber-50 p-3 text-right">
+                  <div className="text-sm font-black text-slate-800">
+                    עלות משוערת להדרכה: החל מ-{estimatedPriceText}*
+                  </div>
+                  <p className="mt-1 text-[11px] leading-relaxed text-slate-600">
+                    * המחיר הינו עבור ההדרכה בלבד ואינו כולל נסיעות/השכרת כיתה. הצעת מחיר סופית כפופה לאישור זמינות, מיקום ואזורי פעילות.
+                  </p>
                 </div>
 
                 <a
