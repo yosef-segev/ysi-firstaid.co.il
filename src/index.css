@@ -28,12 +28,12 @@ html {
 html.high-contrast {
   filter: contrast(170%) saturate(130%);
   background-color: #000000 !important;
-  color: #ffffff !important;
+  color: #facc15 !important;
 }
 
 html.high-contrast body {
   background-color: #000000 !important;
-  color: #ffffff !important;
+  color: #facc15 !important;
 }
 
 html.high-contrast section,
@@ -44,8 +44,8 @@ html.high-contrast article,
 html.high-contrast main,
 html.high-contrast header {
   background-color: #000000 !important;
-  color: #ffffff !important;
-  border-color: #ffffff !important;
+  color: #facc15 !important;
+  border-color: #facc15 !important;
 }
 
 html.high-contrast h1,
@@ -56,24 +56,27 @@ html.high-contrast p,
 html.high-contrast span,
 html.high-contrast li,
 html.high-contrast label,
-html.high-contrast strong {
-  color: #ffffff !important;
+html.high-contrast strong,
+html.high-contrast small,
+html.high-contrast em,
+html.high-contrast b {
+  color: #facc15 !important;
 }
 
 html.high-contrast button,
 html.high-contrast a {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  border: 2px solid #ffffff !important;
+  background-color: #111111 !important;
+  color: #facc15 !important;
+  border: 2px solid #facc15 !important;
 }
 
 html.high-contrast svg {
-  color: #ffffff !important;
+  color: #facc15 !important;
 }
 
 html.high-contrast button svg,
 html.high-contrast a svg {
-  color: #000000 !important;
+  color: #facc15 !important;
 }
 
 /* Accessibility: Saturation Mode */
