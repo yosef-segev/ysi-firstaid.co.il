@@ -42,7 +42,10 @@ html.high-contrast nav,
 html.high-contrast footer,
 html.high-contrast article,
 html.high-contrast main,
-html.high-contrast header {
+html.high-contrast header,
+html.high-contrast aside,
+html.high-contrast figure,
+html.high-contrast form {
   background-color: #000000 !important;
   color: #facc15 !important;
   border-color: #facc15 !important;
@@ -59,7 +62,11 @@ html.high-contrast label,
 html.high-contrast strong,
 html.high-contrast small,
 html.high-contrast em,
-html.high-contrast b {
+html.high-contrast b,
+html.high-contrast td,
+html.high-contrast th,
+html.high-contrast a,
+html.high-contrast button {
   color: #facc15 !important;
 }
 
@@ -76,6 +83,33 @@ html.high-contrast svg {
 
 html.high-contrast button svg,
 html.high-contrast a svg {
+  color: #facc15 !important;
+}
+
+html.high-contrast * {
+  box-shadow: none !important;
+}
+
+html.high-contrast [class*='bg-slate-'],
+html.high-contrast [class*='bg-white'],
+html.high-contrast [class*='bg-red-'],
+html.high-contrast [class*='bg-green-'],
+html.high-contrast [class*='bg-amber-'],
+html.high-contrast [class*='bg-zinc-'],
+html.high-contrast [class*='bg-gray-'] {
+  background-color: #000000 !important;
+  color: #facc15 !important;
+  border-color: #facc15 !important;
+}
+
+html.high-contrast [class*='text-slate-'],
+html.high-contrast [class*='text-white'],
+html.high-contrast [class*='text-red-'],
+html.high-contrast [class*='text-green-'],
+html.high-contrast [class*='text-amber-'],
+html.high-contrast [class*='text-zinc-'],
+html.high-contrast [class*='text-gray-'],
+html.high-contrast [class*='text-stone-'] {
   color: #facc15 !important;
 }
 
