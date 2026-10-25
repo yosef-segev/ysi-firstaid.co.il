@@ -26,7 +26,7 @@ html {
 
 /* Accessibility: High Contrast Mode */
 html.high-contrast {
-  filter: contrast(160%) saturate(120%);
+  filter: contrast(170%) saturate(130%);
   background-color: #000000 !important;
   color: #ffffff !important;
 }
@@ -40,23 +40,27 @@ html.high-contrast section,
 html.high-contrast div,
 html.high-contrast nav,
 html.high-contrast footer,
-html.high-contrast article {
+html.high-contrast article,
+html.high-contrast main,
+html.high-contrast header {
   background-color: #000000 !important;
   color: #ffffff !important;
   border-color: #ffffff !important;
 }
 
-html.high-contrast h1, 
-html.high-contrast h2, 
-html.high-contrast h3, 
+html.high-contrast h1,
+html.high-contrast h2,
+html.high-contrast h3,
 html.high-contrast h4,
-html.high-contrast p, 
+html.high-contrast p,
 html.high-contrast span,
-html.high-contrast li {
+html.high-contrast li,
+html.high-contrast label,
+html.high-contrast strong {
   color: #ffffff !important;
 }
 
-html.high-contrast button, 
+html.high-contrast button,
 html.high-contrast a {
   background-color: #ffffff !important;
   color: #000000 !important;
@@ -67,9 +71,45 @@ html.high-contrast svg {
   color: #ffffff !important;
 }
 
-html.high-contrast button svg, 
+html.high-contrast button svg,
 html.high-contrast a svg {
   color: #000000 !important;
+}
+
+/* Accessibility: Saturation Mode */
+html.saturation {
+  filter: saturate(1.4) contrast(110%);
+}
+
+html.saturation body {
+  background-color: #f8fafc;
+}
+
+/* Accessibility: Content Adjustments */
+html.content-adjustments body,
+html.content-adjustments * {
+  line-height: 1.8 !important;
+  letter-spacing: 0.02em !important;
+}
+
+html.content-adjustments {
+  font-size: 110%;
+}
+
+/* Accessibility: Text Alignment */
+html.text-align-left body,
+html.text-align-left * {
+  text-align: left !important;
+}
+
+html.text-align-right body,
+html.text-align-right * {
+  text-align: right !important;
+}
+
+html.text-align-center body,
+html.text-align-center * {
+  text-align: center !important;
 }
 
 /* Accessibility: Large Text Mode */
@@ -79,14 +119,14 @@ html.large-text {
 
 html.large-text h1 { font-size: 135%; }
 html.large-text h2 { font-size: 125%; }
-html.large-text p, 
-html.large-text span, 
-html.large-text button, 
-html.large-text a, 
-html.large-text input, 
+html.large-text p,
+html.large-text span,
+html.large-text button,
+html.large-text a,
+html.large-text input,
 html.large-text textarea,
-html.large-text select { 
-  font-size: 112%; 
+html.large-text select {
+  font-size: 112%;
 }
 
 /* Accessibility: Visible Focus for Keyboard Navigation (WCAG 2.4.7) */
@@ -111,12 +151,15 @@ html.large-text select {
   transition: top 0.2s ease-in-out;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
 .skip-link:focus {
   top: 16px;
 }
 
 /* Highlight Links Mode */
-html.highlight-links a {
+html.highlight-links a,
+html.highlight-links button,
+html.highlight-links summary {
   text-decoration: underline !important;
   text-decoration-thickness: 2px !important;
   text-underline-offset: 4px !important;
@@ -129,10 +172,73 @@ html.readable-font * {
   letter-spacing: 0.02em !important;
 }
 
+/* Large Cursor Mode */
+html.large-cursor *,
+html.large-cursor *::before,
+html.large-cursor *::after {
+  cursor: pointer !important;
+}
+
 /* Stop Animations Mode */
 html.stop-animations *,
 html.stop-animations *::before,
 html.stop-animations *::after {
   animation: none !important;
   transition: none !important;
+}
+
+/* Reading Mask / Focus Guide */
+html.reading-mask body {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(255,255,255,0.97));
+}
+
+html.reading-mask .reading-guide {
+  box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.15);
+}
+
+/* Hide Images */
+html.hide-images img,
+html.hide-images picture,
+html.hide-images svg[aria-label],
+html.hide-images .image {
+  display: none !important;
+}
+
+/* Page Structure / Landmark Helper */
+html.page-structure * {
+  outline-offset: 1px;
+}
+
+html.page-structure header,
+html.page-structure nav,
+html.page-structure main,
+html.page-structure footer,
+html.page-structure section,
+html.page-structure article {
+  border: 1px solid rgba(220, 38, 38, 0.25) !important;
+}
+
+/* Dictionary / content flag */
+html.dictionary [data-dictionary] {
+  border-bottom: 2px dotted #dc2626;
+}
+
+/* Info Panels */
+html.info-panels [data-help] {
+  position: relative;
+}
+
+html.info-panels [data-help]::after {
+  content: attr(data-help);
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  transform: translateY(-6px);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 11px;
+  white-space: nowrap;
+  z-index: 10;
 }
