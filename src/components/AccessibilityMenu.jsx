@@ -16,11 +16,11 @@ import {
   AlignLeft,
   MousePointer2,
   EyeOff,
-  BookOpenText,
   LayoutGrid,
   Languages,
   Info,
   MessageSquareText,
+  BookOpenText,
 } from 'lucide-react';
 import AccessibilityModal from './AccessibilityModal';
 
@@ -64,7 +64,7 @@ const AccessibilityMenu = () => {
       pageStructure: localStorage.getItem('ysi-page-structure') === 'true',
       dictionary: localStorage.getItem('ysi-dictionary') === 'true',
       hideImages: localStorage.getItem('ysi-hide-images') === 'true',
-      infoPanels: localStorage.getItem('ysi-info-panels') === 'true'
+      infoPanels: localStorage.getItem('ysi-info-panels') === 'true',
     };
 
     if (saved.screenReader) toggleOption('screen-reader', true);
@@ -111,7 +111,7 @@ const AccessibilityMenu = () => {
       'page-structure': { value: pageStructure, setter: setPageStructure, key: 'ysi-page-structure', className: 'page-structure' },
       dictionary: { value: dictionary, setter: setDictionary, key: 'ysi-dictionary', className: 'dictionary' },
       'hide-images': { value: hideImages, setter: setHideImages, key: 'ysi-hide-images', className: 'hide-images' },
-      'info-panels': { value: infoPanels, setter: setInfoPanels, key: 'ysi-info-panels', className: 'info-panels' }
+      'info-panels': { value: infoPanels, setter: setInfoPanels, key: 'ysi-info-panels', className: 'info-panels' },
     };
 
     const option = options[type];
@@ -175,11 +175,11 @@ const AccessibilityMenu = () => {
     { key: 'readableFont', label: 'גופנים קריאים', description: 'הפעלת גופנים קריאים יותר לבהירות טובה יותר.', icon: FileText, active: readableFont, onToggle: () => toggleOption('font') },
     { key: 'largeCursor', label: 'סמן גדול', description: 'הגדלת הסמן לשיפור הנראות.', icon: MousePointer2, active: largeCursor, onToggle: () => toggleOption('large-cursor') },
     { key: 'stopAnimations', label: 'עצירת אנימציות', description: 'השהיית כל האנימציות להפחתת הסחות דעת.', icon: Ban, active: stopAnimations, onToggle: () => toggleOption('animations') },
-    { key: 'readingMask', label: 'עזר קריאה', description: 'שימוש במסיכת קריאה או מדריך קריאה לעזרה בהתמקדות בחלקים ספציפיים של הטקסט.', icon: Eye, active: readingMask, onToggle: () => toggleOption('reading-mask') },
+    { key: 'readingMask', label: 'עזר קריאה', description: 'שימוש במסיכת קריאה או מדריך קריאה לעזרה בהתמקדות בחלקים ספציפיים של הטקסט.', icon: BookOpenText, active: readingMask, onToggle: () => toggleOption('reading-mask') },
     { key: 'pageStructure', label: 'מבנה דף', description: 'ניווט קל דרך מבנה הדף.', icon: LayoutGrid, active: pageStructure, onToggle: () => toggleOption('page-structure') },
     { key: 'dictionary', label: 'מילון', description: 'קבלת הגדרות למילים קשות ישירות בדף.', icon: Languages, active: dictionary, onToggle: () => toggleOption('dictionary') },
     { key: 'hideImages', label: 'הסתרת תמונות', description: 'הסתרת תמונות להתמקדות בתוכן הטקסטואלי.', icon: EyeOff, active: hideImages, onToggle: () => toggleOption('hide-images') },
-    { key: 'infoPanels', label: 'חלוניות מידע', description: 'הפעלת חלוניות מידע להסברים נוספים על אלמנטים.', icon: Info, active: infoPanels, onToggle: () => toggleOption('info-panels') }
+    { key: 'infoPanels', label: 'חלוניות מידע', description: 'הפעלת חלוניות מידע להסברים נוספים על אלמנטים.', icon: Info, active: infoPanels, onToggle: () => toggleOption('info-panels') },
   ];
 
   return (
